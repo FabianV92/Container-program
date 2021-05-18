@@ -17,12 +17,7 @@ public class Tester {
     public static void main(String[] args) {
         Controller containerApp = new Controller();
 
-        System.out.println("   ______            __        _                                    \n" +
-                "  / ____/___  ____  / /_____ _(_)___  ___  _____   ____ _____  ____ \n" +
-                " / /   / __ \\/ __ \\/ __/ __ `/ / __ \\/ _ \\/ ___/  / __ `/ __ \\/ __ \\\n" +
-                "/ /___/ /_/ / / / / /_/ /_/ / / / / /  __/ /     / /_/ / /_/ / /_/ /\n" +
-                "\\____/\\____/_/ /_/\\__/\\__,_/_/_/ /_/\\___/_/      \\__,_/ .___/ .___/ \n" +
-                "                                                     /_/   /_/      ");
+        System.out.println();
 
      try {
             containerApp.init();

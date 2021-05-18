@@ -209,16 +209,13 @@ public class Controller extends ContainerData implements CrudMethods {
                 "2: Change the current location of the container\n" +
                 "3: Change the Container status\n" +
                 "4: Back to the main menu";
-        String currentCustomerNameTxt = "Current Customer name is: ";
         String changeCustomerNameTxt = "Type the new Customer name and press Enter";
-        String currentLocationTxt = "Current Location is: ";
         String changeLocationTxt = "Type the new location of the container and press Enter";
-        String currentStatusTxt = "Current status is: ";
         String changeStatusTxt = "Type '+' to set container to active and '-' to not active";
         String success = "successful changed !";
-        String[] strArr = new String[8];
-        String str = "";
-        String casenNmb = "";
+        String[] strArr;
+        String str;
+        String casenNmb;
 
         // Displaying all customer names from the containers
         System.out.println(chooseContainerTxt);
@@ -258,9 +255,8 @@ public class Controller extends ContainerData implements CrudMethods {
                     for (String i : strArr) {
                         sb.append(i);
                     }
-                    System.out.println(Arrays.toString(strArr));
+                    System.out.println(success);
                     containers.set((Integer.parseInt(casenNmb) - 1), sb.toString());
-                    System.out.println(containers.get(0).toString());
                     break;
                 }
                 case 2: {
@@ -275,7 +271,6 @@ public class Controller extends ContainerData implements CrudMethods {
                     for (String i : strArr) {
                         sb.append(i);
                     }
-                    System.out.println(Arrays.toString(strArr));
                     containers.set((Integer.parseInt(casenNmb) - 1), sb.toString());
                     System.out.println(success);
                     break;
@@ -288,11 +283,9 @@ public class Controller extends ContainerData implements CrudMethods {
                     strArr[3] = (scSts.equals("+") ? "active" : "delivered");
                     StringBuilder sb = new StringBuilder();
                     addSeparator(strArr);
-
                     for (String i : strArr) {
                         sb.append(i);
                     }
-                    System.out.println(Arrays.toString(strArr));
                     containers.set((Integer.parseInt(casenNmb) - 1), sb.toString());
                     System.out.println(success);
                     break;
@@ -427,7 +420,12 @@ public class Controller extends ContainerData implements CrudMethods {
     public void init() {
         boolean loopBool = true;
         Scanner sc = new Scanner(System.in);
-
+        String containerAppTxt = "   ______            __        _                                    \n" +
+                "  / ____/___  ____  / /_____ _(_)___  ___  _____   ____ _____  ____ \n" +
+                " / /   / __ \\/ __ \\/ __/ __ `/ / __ \\/ _ \\/ ___/  / __ `/ __ \\/ __ \\\n" +
+                "/ /___/ /_/ / / / / /_/ /_/ / / / / /  __/ /     / /_/ / /_/ / /_/ /\n" +
+                "\\____/\\____/_/ /_/\\__/\\__,_/_/_/ /_/\\___/_/      \\__,_/ .___/ .___/ \n" +
+                "                                                     /_/   /_/      ";
         String lineSep = "----------------------------------------------------------------------------";
         String userTxt = "Type one of the numbers of the following menu and press enter\n" +
                 "1. Choose a container and let me see the whole information of the container\n" +
@@ -440,6 +438,7 @@ public class Controller extends ContainerData implements CrudMethods {
         String defaultTxt = "!! Please type one of the following numbers of the menu (1-5) !!\n" +
                 lineSep;
         load(); // Assigning containers array list to the data.dat array list
+        System.out.println(containerAppTxt);
         while (loopBool) {
             try {
                 System.out.println(userTxt);
