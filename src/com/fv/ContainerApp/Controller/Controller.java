@@ -174,8 +174,8 @@ public class Controller extends ContainerData implements CrudMethods {
             System.out.println("Container Name: " + strArr[1]);
             System.out.println("Location: " + strArr[2]);
             System.out.println("Container type: " + strArr[7]);
-            System.out.println("Container volume: " + strArr[5]);
-            System.out.println("Container weight: " + strArr[6]);
+            System.out.println("Container volume: " + strArr[5]+ " m²");
+            System.out.println("Container weight: " + strArr[6]+" kg");
             System.out.println("Delivery date: " + strArr[4]);
             System.out.println("Status of the container: " + strArr[3]);
             System.out.println(lineSep +
@@ -277,7 +277,7 @@ public class Controller extends ContainerData implements CrudMethods {
 
                 }
                 case 3: {
-                    System.out.println("Current status : " + strArr[3] + "\n" + changeStatusTxt);
+                    System.out.println("Current container status : " + strArr[3] + "\n" + changeStatusTxt);
 
                     String scSts = scannerStatus.next();
                     strArr[3] = (scSts.equals("+") ? "active" : "delivered");
